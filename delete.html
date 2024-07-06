@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>  Delete Event</title>
+    <form action ="/delete" method ="get">
+            {% csrf_token %}
+        <ol>
+          <h2> DELETE EVENTS </h2>
+                  {% for event in delete_events %}
+                          <tr>
+                              <td>{{ event.name }}</td>
+                              <td>{{ event.date }}</td>
+                              <td>{{ event.time }}</td>
+                              <td>{{ event.description }}</td>
+                          </tr>
+                          {% endfor %}
+        <form action="{% url 'delete' %}" method="post">
+        {% csrf_token %}
+        <label for="Eventname"><b>Event Name:</b></label><br>
+        <input type="text" id="Eventname" name="Eventname" required><br><br>
+        
+        <input type="submit" value="Delete Event">
+        
+       </form>
+      </head>
+  <body>
+
+  </body>
+</html>

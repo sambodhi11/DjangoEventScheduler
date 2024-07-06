@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EVENT SCHEDULER </title>
+  </head>
+  <form method="get">
+    {% csrf_token %}
+ <body>
+  <h1> Event Scheduler </h1>
+<table border ='2'>
+  <thead>
+    <tr>
+      <th> Event_name</th>
+      <th> Event_date</th>
+      <th> Event_time</th>
+      <th> Event_description</th>
+      <!-- add more columns for additional fields-->
+    </tr>
+  </thead>
+  <tbody>
+    {% for event in events %}
+            <tr>
+                <td>{{ event.name }}</td>
+                <td>{{ event.date }}</td>
+                <td>{{ event.time }}</td>
+                <td>{{ event.description }}</td>
+            </tr>
+            <form action="{% url 'delete' %}" method="post">
+              {% csrf_token %}
+              
+          </form>
+            {% endfor %}
+  </tbody>
+</table>
+</form>
+  </body>
+</html>

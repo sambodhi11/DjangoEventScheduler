@@ -1,0 +1,57 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Events</title>
+</head>
+<body>
+    <h1>UPDATE EVENTS</h1>
+    <form action="{% url 'Update'  %}" method="POST">
+        {% csrf_token %}
+        <label for="Eventname"><b>Enter New Name:</b></label><br>
+        <input type="text" id="Eventname" name="Eventname"><br><br>
+        
+        <label for="EventDate"><b>Event Date:</b></label><br>
+        <input type="date" id="EventDate" name="EventDate"><br><br>
+        
+        <label for="EvenTime"><b>Event Time:</b></label><br>
+        <input type="time" id="EventTime" name="EventTime"><br><br>
+        
+        <label for="EventDescription"><b>Event Description:</b></label><br>
+        <textarea id="EventDescription" name="EventDecription"></textarea><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Event</title>
+</head>
+<body>
+    <h1>Update Event</h1>
+    <form action="{% url 'Update' %}" method="POST">
+        {% csrf_token %}
+        <label for="Eventname"><b>Event Name:</b></label><br>
+        <input type="text" id="Eventname" name="Eventname" required><br><br>
+        
+        <label for="EventDate"><b>Event Date:</b></label><br>
+        <input type="date" id="EventDate" name="EventDate" required><br><br>
+        
+        <label for="EventTime"><b>Event Time:</b></label><br>
+        <input type="time" id="EventTime" name="EventTime" required><br><br>
+        
+        <label for="EventDescription"><b>Event Description:</b></label><br>
+        <textarea id="EventDescription" name="EventDescription" required></textarea><br><br>
+        
+        <input type="submit" value="Update Event">
+    </form>
+</body>
+</html>
+
